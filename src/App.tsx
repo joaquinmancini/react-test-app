@@ -1,28 +1,47 @@
-import { useState } from "react";
-import GiftList from "./GiftList/GiftList";
-import checkEmptyString from "./utils/helper.js";
-import TotalGifts from "./TotalGifts/TotalGifts.js";
-import "./App.css";
+import { useEffect, useState } from 'react';
+import GiftList from './GiftList/GiftList';
+import checkEmptyString from './utils/helper.js';
+import TotalGifts from './TotalGifts/TotalGifts.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from 'react-router-dom';
+import './App.css';
+import Home from './Home/Home.js';
+import About from './About/About.js';
 
 const App: React.FC = () => {
-  const [gifts, setGifts] = useState<string[]>([]);
-
-  const addGift = () => {
-    const newGift: string = prompt("¿Qué regalo quieres añadir?") as string;
-    if (checkEmptyString(newGift)) {
-      setGifts([...gifts, newGift]);
-    }
-  };
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="app-wrapper">
-        <h1>Lista de regalos</h1>
-        <GiftList gifts={gifts} addGift={addGift} />
-        <TotalGifts totalGifts={gifts.length} />
+      <h1>Titulo del Nav</h1>
+      <nav>
+        <ul>
+          <li>
+            {/* <a href="/">Home</a> */}
+            <button onClick={() => navigate('/')}>Ir al Home</button>
+          </li>
+          <li>
+            {/* <a href="/about">About</a> */}
+            <button onClick={() => navigate('/about')}>Ir a About</button>
+          </li>
+        </ul>
+      </nav>
+      <div>
+        {/* Define your navigation links */}
+        {/* Define the routes */}
+        {/* Ex Switch */}
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/about' element={<About />}></Route>
+        </Routes>
       </div>
+
+    
     </>
   );
 };
-
 export default App;
