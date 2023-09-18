@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import GiftList from './GiftList/GiftList';
 import checkEmptyString from './utils/helper.js';
 import TotalGifts from './TotalGifts/TotalGifts.js';
+import {Auto, getUser} from './Services/service.ts'
+
 import {
   BrowserRouter as Router,
   Route,
@@ -13,7 +15,9 @@ import Home from './Home/Home.js';
 import About from './About/About.js';
 
 const App: React.FC = () => {
+  // const [user, setUser] = useState(Promise<Auto[]>);
   const navigate = useNavigate();
+  let users = [];
 
   return (
     <>
@@ -27,6 +31,9 @@ const App: React.FC = () => {
           <li>
             {/* <a href="/about">About</a> */}
             <button onClick={() => navigate('/about')}>Ir a About</button>
+          </li>
+          <li>
+            <button onClick={() => (getUser('1'))}>Buscar user</button>
           </li>
         </ul>
       </nav>
