@@ -1,23 +1,35 @@
-import { useEffect, useState } from 'react';
-import GiftList from './GiftList/GiftList';
-import checkEmptyString from './utils/helper.js';
-import TotalGifts from './TotalGifts/TotalGifts.js';
-import {Auto, getUser} from './Services/service.ts'
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useNavigate,
-} from 'react-router-dom';
-import './App.css';
-import Home from './Home/Home.js';
-import About from './About/About.js';
+import { useEffect, useState } from 'react'
+import { Auto, CarsResponse, useGetAutosService } from './Services/service.ts'
+import { Route, Routes, useNavigate } from 'react-router-dom'
+import './App.css'
+import Home from './Home/Home.js'
+import About from './About/About.js'
+import { getCarsMock } from './Services/Mock/CarsMock.ts'
 
 const App: React.FC = () => {
+  const [cars, setCars] = useState<Auto[]>()
+  const [isLoading, setIsLoading] = useState(false)
   // const [user, setUser] = useState(Promise<Auto[]>);
-  const navigate = useNavigate();
-  let users = [];
+  const navigate = useNavigate()
+  // const carsitos = getAutos()
+  const { getAutos } = useGetAutosService()
+
+  const getCars = () => {
+    return console.log(cars)
+  }
+
+  useEffect(() => {
+    setIsLoading(true)
+    const miguel: CarsResponse = getCarsMock
+    const { autos } = miguel
+    if (!autos) {
+      //  showModal(ErrorService)
+      console.log('Se produjo u nerror al cargar los autos')
+    }
+    setCars(autos)
+    setIsLoading(false)
+  }),
+    []
 
   return (
     <>
@@ -33,7 +45,13 @@ const App: React.FC = () => {
             <button onClick={() => navigate('/about')}>Ir a About</button>
           </li>
           <li>
-            <button onClick={() => (getUser('1'))}>Buscar user</button>
+            <button
+              onClick={() => {
+                getCars()
+              }}
+            >
+              Cars
+            </button>
           </li>
         </ul>
       </nav>
@@ -46,9 +64,7 @@ const App: React.FC = () => {
           <Route path='/about' element={<About />}></Route>
         </Routes>
       </div>
-
-    
     </>
-  );
-};
-export default App;
+  )
+}
+export default App
