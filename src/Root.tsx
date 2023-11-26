@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import DriveMartRoutes from './routes/DriveMartRoutes'
+import DriveMartRoutes from './Routes/DriveMartRoutes'
 
 type RoutesType = {
   element: any
@@ -9,7 +9,6 @@ type RoutesType = {
 }
 
 const Root: React.FC = () => {
-
   return (
     <Routes>
       {DriveMartRoutes.map((item: RoutesType) => (

@@ -5,7 +5,6 @@ import Cars from '../pages/cars/Cars'
 export const basePathName = '/drivemart'
 
 export const routes = {
-  root: '/',
   home: '/home',
   about: '/about',
   cars: '/cars'
@@ -31,7 +30,7 @@ const DriveMartRoutes: RoutesType[] = [
     element: <Cars />,
     path: routes.cars,
     key: routes.cars
-  },
+  }
 ]
 
 export default DriveMartRoutes
