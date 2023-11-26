@@ -1,0 +1,13 @@
+h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.main-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
