@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { getCarsMock } from './mock/CarsMock'
+// import { getCarsMock } from './Mock/CarsMock'
 import { useCallback } from 'react'
+import { getCarsMock } from '../Services/Mock/CarsMock'
 const baseURL = 'https://jsonplaceholder.typicode.com/users/.'
 
 export interface Auto {
