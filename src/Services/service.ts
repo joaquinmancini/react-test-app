@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getCarsMock } from './Mock/CarsMock'
+import { getCarsMock } from './mock/CarsMock'
 import { useCallback } from 'react'
 const baseURL = 'https://jsonplaceholder.typicode.com/users/.'
 
