@@ -46,5 +46,6 @@ export const Small: Story = {
   args: {
     size: 'small',
     label: 'Button',
+    nativeProps:{className:'bg-dark-1'}
   },
 };

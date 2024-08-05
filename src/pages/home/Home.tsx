@@ -1,36 +1,43 @@
 import './Home.css'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getCarsMock } from '../../Services/Mock/CarsMock.ts'
+import { getCarsMock } from '../../services/mock/CarsMock.ts'
 import {
   Auto,
   CarsResponse,
   useGetAutosService
 } from '../../services/service.ts'
 const Home: React.FC = () => {
-  const [cars, setCars] = useState<Auto[]>()
+  const [cars, setCars] = useState<CarsResponse>()
   const [isLoading, setIsLoading] = useState(false)
   // const [user, setUser] = useState(Promise<Auto[]>);
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   // const carsitos = getAutos()
   const { getAutos } = useGetAutosService()
 
-  const getCars = () => {
-    return console.log(cars)
+  const getAutosFn = async () => {
+    const cars = await getAutos()
+    console.log(cars)
+    return cars
   }
 
+  // useEffect(() => {
+  //   setIsLoading(true)
+  //   const miguel: Promise<CarsResponse> = getAutosServ()
+  //   const autos = await miguel
+  //   if (!autos) {
+  //     //  showModal(ErrorService)
+  //     console.log('Se produjo u nerror al cargar los autos')
+  //   }
+  //   setCars(autos)
+  //   setIsLoading(false)
+  // }, [getAutos])
+
   useEffect(() => {
-    setIsLoading(true)
-    const miguel: CarsResponse = getCarsMock
-    const { autos } = miguel
-    if (!autos) {
-      //  showModal(ErrorService)
-      console.log('Se produjo u nerror al cargar los autos')
-    }
-    setCars(autos)
-    setIsLoading(false)
-  }),
-    []
+    console.log('consologeando');
+    
+    getAutosFn()
+  }, [])
 
   return (
     <>

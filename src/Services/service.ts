@@ -1,8 +1,8 @@
 import axios from 'axios'
 // import { getCarsMock } from './Mock/CarsMock'
 import { useCallback } from 'react'
-import { getCarsMock } from '../Services/Mock/CarsMock'
-const baseURL = 'https://jsonplaceholder.typicode.com/users/.'
+import { getCarsMock } from '../services/mock/CarsMock'
+const baseURL = 'http://localhost:8000/api/v1'
 
 export interface Auto {
   id: number
@@ -20,14 +20,28 @@ export interface CarsResponse {
 // INTERFAZ DE METODOS
 export interface AutosServiceReturn {
   getAutos: () => Promise<CarsResponse> // Este es el getter de la Promesa de tipo CarsResponse
+  getAutosServ: () => Promise<CarsResponse>
   getUser: (userId: string) => Promise<any>
-  getCualquierCosa: () => Promise<any>
+  getUseQuery: () => Promise<any>
 }
 
 export const useGetAutosService = (): AutosServiceReturn => {
   // : Promise<Auto[]> Con la forma de async Await fetch
+  //MOCK
   const getAutos = useCallback(async () => {
     return await Promise.resolve(getCarsMock)
+  }, [])
+
+  const getAutosServ = useCallback(async () => {
+    let cars: CarsResponse
+    try {
+      const response = await fetch(baseURL + '/cars')
+      cars = await response.json()
+      console.log(cars)
+    } catch {
+      throw new Error('error get autosService')
+    }
+    return cars
   }, [])
 
   // : Promise<Auto[]> Con la forma de Promesas
@@ -49,15 +63,18 @@ export const useGetAutosService = (): AutosServiceReturn => {
       })
   }
 
-  const getCualquierCosa = async () => {
-    return await new Promise(() =>
-      console.log('Nueva Promesa de cualquier tipo')
-    )
+  const getUseQuery = async () => {
+    const response = await fetch('/api/data')
+    if (!response.ok) {
+      throw new Error('Failed to fetch data')
+    }
+    return response.json()
   }
 
   return {
     getUser,
+    getAutosServ,
     getAutos,
-    getCualquierCosa
+    getUseQuery
   }
 }

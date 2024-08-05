@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import DriveMartRoutes from './Routes/DriveMartRoutes'
+import DriveMartRoutes from './routes/DriveMartRoutes'
 
 type RoutesType = {
   element: any

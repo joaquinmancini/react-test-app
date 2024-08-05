@@ -7,7 +7,7 @@ export const NavBar: React.FC = () => {
   //TODO-> ARMAR UN NAVIGATE GENERICO EN FORMATO FUNCION PARA USARLO NE TODA LA APP
   return (
     <div>
-      <nav>
+      <nav className='mt-[50px]'>
         <ul className='navX'>
           <li>
             <button onClick={() => navigate('/home')}>Home</button>
