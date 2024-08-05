@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# Inicio Proyecto Vite + Tailwind + Storybook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Project setup
+# [Instalacion de Tailwind](https://tailwindcss.com/docs/guides/vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para comenzar, se instalo el paquete de vite con el siguiente comando:
+```npm create vite@latest my-project -- --template react```
 
-## Expanding the ESLint configuration
+Luego, se instalo el paquete de tailwind con el siguiente comando:
+```npm install -D tailwindcss@latest postcss@latest autoprefixer@latest```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Se creo el archivo de configuracion de tailwind con el siguiente comando:
+```npx tailwindcss init -p```
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
+Se completo el archivo de configuracion de tailwind con el siguiente contenido:
+```
+export default {
+   content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}",
+   ],
+   theme: {
+      extend: {},
    },
+   plugins: [],
+}
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Se agregaron las directivas de tailwind en el archivo index.css con el siguiente contenido:
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+# [Instalacion de Storybook](https://storybook.js.org/blog/first-class-vite-support-in-storybook/)
+
+Se instalo el paquete de storybook con el siguiente comando:
+```npx storybook init --builder=vite```

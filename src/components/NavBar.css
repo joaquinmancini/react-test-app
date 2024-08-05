@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+}
+
+button {
+  color: antiquewhite;
+  display: flex;
+}
+
+.navX {
+  display: flex;
+  list-style: none;
+  justify-items: start;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+}

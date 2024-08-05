@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import GiftList from '../GiftList/GiftList';
-import TotalGifts from '../TotalGifts/TotalGifts';
+import GiftList from '../gift-list/GiftList';
+import TotalGifts from '../total-gifts/TotalGifts';
 import checkEmptyString from '../utils/helper';
 
 //ESTE COMPONENTE HOME CONTIENE LA PARTE DE GIFTS Q ESTABA EN APP
