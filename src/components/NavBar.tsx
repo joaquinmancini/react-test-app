@@ -4,10 +4,10 @@ import './NavBar.css'
 
 export const NavBar: React.FC = () => {
   const navigate = useNavigate()
-  //TODO-> ARMAR UN NAVIGATE GENERICO EN FORMATO FUNCION PARA USARLO NE TODA LA APP
+  //TODO-> ARMAR UN NAVIGATE GENERICO EN FORMATO FUNCION PARA USARLO EN TODA LA APP
   return (
     <div>
-      <nav className='mt-[50px]'>
+      <nav className='flex h-10'>
         <ul className='navX'>
           <li>
             <button onClick={() => navigate('/home')}>Home</button>
