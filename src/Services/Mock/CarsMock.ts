@@ -1,89 +1,89 @@
 // import { CarsResponse } from '../../Services/service'
 
-import { CarsResponse } from '../../services/service'
+import { CarsResponse } from "../../Services/service";
 
 export const getCarsMock: CarsResponse = {
   autos: [
     {
       id: 1,
-      marca: 'BMW',
-      modelo: 'M Roadster',
+      marca: "BMW",
+      modelo: "M Roadster",
       año: 2008,
-      patente: '1GD422CGXEF579840',
-      imagen: 'http://dummyimage.com/174x100.png/ff4444/ffffff'
+      patente: "1GD422CGXEF579840",
+      imagen: "http://dummyimage.com/174x100.png/ff4444/ffffff",
     },
     {
       id: 2,
-      marca: 'Chevrolet',
-      modelo: 'Suburban 2500',
+      marca: "Chevrolet",
+      modelo: "Suburban 2500",
       año: 1996,
-      patente: '1FTEW1C84AF792709',
-      imagen: 'http://dummyimage.com/167x100.png/dddddd/000000'
+      patente: "1FTEW1C84AF792709",
+      imagen: "http://dummyimage.com/167x100.png/dddddd/000000",
     },
     {
       id: 3,
-      marca: 'GMC',
-      modelo: 'Yukon XL 2500',
+      marca: "GMC",
+      modelo: "Yukon XL 2500",
       año: 2007,
-      patente: 'WAU2GAFC1DN452783',
-      imagen: 'http://dummyimage.com/205x100.png/5fa2dd/ffffff'
+      patente: "WAU2GAFC1DN452783",
+      imagen: "http://dummyimage.com/205x100.png/5fa2dd/ffffff",
     },
     {
       id: 4,
-      marca: 'GMC',
-      modelo: 'Sonoma Club Coupe',
+      marca: "GMC",
+      modelo: "Sonoma Club Coupe",
       año: 1997,
-      patente: '3A4GY5F91AT017740',
-      imagen: 'http://dummyimage.com/232x100.png/dddddd/000000'
+      patente: "3A4GY5F91AT017740",
+      imagen: "http://dummyimage.com/232x100.png/dddddd/000000",
     },
     {
       id: 5,
-      marca: 'Chevrolet',
-      modelo: 'Silverado 2500',
+      marca: "Chevrolet",
+      modelo: "Silverado 2500",
       año: 2004,
-      patente: '4T1BD1FK5EU490989',
-      imagen: 'http://dummyimage.com/118x100.png/5fa2dd/ffffff'
+      patente: "4T1BD1FK5EU490989",
+      imagen: "http://dummyimage.com/118x100.png/5fa2dd/ffffff",
     },
     {
       id: 6,
-      marca: 'Chevrolet',
-      modelo: '3500',
+      marca: "Chevrolet",
+      modelo: "3500",
       año: 1993,
-      patente: '1G6DJ8E38D0573589',
-      imagen: 'http://dummyimage.com/148x100.png/dddddd/000000'
+      patente: "1G6DJ8E38D0573589",
+      imagen: "http://dummyimage.com/148x100.png/dddddd/000000",
     },
     {
       id: 7,
-      marca: 'Nissan',
-      modelo: 'Armada',
+      marca: "Nissan",
+      modelo: "Armada",
       año: 2008,
-      patente: '3N1CE2CP5EL159029',
-      imagen: 'http://dummyimage.com/117x100.png/5fa2dd/ffffff'
+      patente: "3N1CE2CP5EL159029",
+      imagen: "http://dummyimage.com/117x100.png/5fa2dd/ffffff",
     },
     {
       id: 8,
-      marca: 'Cadillac',
-      modelo: 'DeVille',
+      marca: "Cadillac",
+      modelo: "DeVille",
       año: 2005,
-      patente: 'JN8AF5MR7FT450216',
-      imagen: 'http://dummyimage.com/150x100.png/5fa2dd/ffffff'
+      patente: "JN8AF5MR7FT450216",
+      imagen: "http://dummyimage.com/150x100.png/5fa2dd/ffffff",
     },
     {
       id: 9,
-      marca: 'Honda',
-      modelo: 'Accord',
+      marca: "Honda",
+      modelo: "Accord",
       año: 2012,
-      patente: '1HGCR6F36FA384233',
-      imagen: 'http://dummyimage.com/100x100.png/ff4444/ffffff'
+      patente: "1HGCR6F36FA384233",
+      imagen: "http://dummyimage.com/100x100.png/ff4444/ffffff",
     },
     {
       id: 10,
-      marca: 'Chevrolet',
-      modelo: '1500',
+      marca: "Chevrolet",
+      modelo: "1500",
       año: 1994,
-      patente: 'W04GY5GV2B1167702',
-      imagen: 'http://dummyimage.com/176x100.png/ff4444/ffffff'
-    }
+      patente: "W04GY5GV2B1167702",
+      imagen: "http://dummyimage.com/176x100.png/ff4444/ffffff",
+    },
     // {
     //   id: 11,
     //   marca: 'Maybach',
@@ -404,5 +404,5 @@ export const getCarsMock: CarsResponse = {
     //   patente: 'WAUGL98E27A097391',
     //   imagen: 'http://dummyimage.com/122x100.png/ff4444/ffffff'
     // }
-  ]
-}
+  ],
+};
