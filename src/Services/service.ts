@@ -1,7 +1,7 @@
 import axios from 'axios'
 // import { getCarsMock } from './Mock/CarsMock'
 import { useCallback } from 'react'
-import { getCarsMock } from '../services/mock/CarsMock'
+import { getCarsMock } from '../Services/Mock/CarsMock'
 const baseURL = 'http://localhost:8000/api/v1'
 
 export interface Auto {
@@ -32,6 +32,7 @@ export const useGetAutosService = (): AutosServiceReturn => {
     return await Promise.resolve(getCarsMock)
   }, [])
 
+  //Llamada a la api
   const getAutosServ = useCallback(async () => {
     let cars: CarsResponse
     try {
@@ -48,12 +49,12 @@ export const useGetAutosService = (): AutosServiceReturn => {
   const getUser = async (userID: string) => {
     await axios
       .get(baseURL + userID)
-      .then(response => {
+      .then((response) => {
         // manejar respuesta exitosa
         console.log(response.data)
         return response.data.email
       })
-      .catch(error => {
+      .catch((error) => {
         // manejar error
         console.log(error)
         console.log('Error en la peticion')
@@ -65,8 +66,8 @@ export const useGetAutosService = (): AutosServiceReturn => {
 
   const getUseQuery = async () => {
     const response = await fetch('/api/data')
-    if (!response.ok) {
-      throw new Error('Failed to fetch data')
+    if (response.status !== 200) {
+      return new Error('Failed to fetch data')
     }
     return response.json()
   }
