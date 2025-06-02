@@ -1,3 +1,4 @@
+import { Button } from '@drivemarket/drive-market-react-components'
 import { useEffect, useState } from 'react'
 import { CarsResponse, useGetAutosService } from '../../Services/service'
 import './Home.css'
@@ -41,6 +42,11 @@ const Home: React.FC = () => {
     <>
       <div className='main-container'>
         <h1 className='main-container'> Bienvenidos a DriveMart!!!</h1>
+        <Button
+          label='HOla'
+          color='secondary'
+          onClick={() => console.log('Te la pusimos')}
+        ></Button>
       </div>
     </>
   )
